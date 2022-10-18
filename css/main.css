@@ -1,9 +1,10 @@
 /* global rules  */
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600;1,700&display=swap");
 :root {
-  --main-color: #dc6601;
-  --sec-color: #ec9006;
-  --third-color: #d24e01;
+  --main-color: #ff8906;
+  --sec-color: #0f0e17;
+  --third-color: #f25f4c;
+  --forth-color: #e53170;
   --white: #fff;
   --black: #000;
 }
@@ -48,7 +49,7 @@ body {
   text-align: center;
   font-size: 40px;
   margin-bottom: 50px;
-  text-shadow: 2px 0 0 var(--third-color), -2px 0 0 var(--main-color);
+  text-shadow: -2px 0 0 var(--main-color);
 }
 
 @media (max-width: 767px) {
@@ -76,7 +77,7 @@ header .logo {
   font-size: 2em;
   letter-spacing: 2px;
   padding: 0 10px;
-  text-shadow: 2px 0 0 var(--third-color), -2px 0 0 var(--main-color);
+  text-shadow: -2px 0 0 var(--main-color);
   font-weight: 600;
   position: relative;
   z-index: 1;
@@ -86,14 +87,13 @@ header .container nav ul {
   display: flex;
   gap: 20px;
 }
-header .container nav ul a {
+header nav ul a {
   color: var(--white);
   transition: 0.3s;
-  color: var(--white);
   font-weight: 600;
 }
 header ul a:hover {
-  color: var(--third-color);
+  color: var(--main-color);
 }
 .menu-icon {
   display: none;
@@ -236,7 +236,7 @@ header ul a:hover {
   margin: 0 5px;
 }
 .landing .socials a:hover {
-  color: var(--third-color);
+  color: var(--forth-color);
 }
 /* end landing section */
 /* start sevices section */
@@ -269,7 +269,7 @@ header ul a:hover {
 /* end sevices section */
 /* start projects section */
 #projects {
-  background-color: #954907;
+  background-color: var(--sec-color);
   margin: 50px 0;
   padding: 50px 20px;
 }
@@ -281,7 +281,7 @@ header ul a:hover {
   gap: 30px;
 }
 #projects .project {
-  flex: 0 0 45%;
+  flex: 0 0 30%;
   background-color: var(--white);
   border-radius: 15px;
   overflow: hidden;
@@ -308,10 +308,16 @@ header ul a:hover {
 }
 #projects .project a {
   color: var(--white);
+  margin-left: auto;
+}
+@media (max-width: 991.98px) {
+  #projects .project {
+    flex: 0 0 45%;
+  }
 }
 @media (max-width: 767.98px) {
   #projects .project {
-    flex: 0 0 100%;
+    flex: 0 0 80%;
   }
   #projects .project {
     font-size: 0.6em;
@@ -329,32 +335,24 @@ header ul a:hover {
 }
 
 .contact .container .box {
+  background-color: white;
+  color: var(--main-color);
   margin: 50px auto;
   width: 350px;
   text-align: center;
   padding: 50px;
-  background-color: white;
-  box-shadow: 5px 5px 25px #777;
   border-radius: 15px;
   -webkit-border-radius: 15px;
   transition-duration: 0.3s;
 }
-
+.contact .container .box:hover {
+  transform: scale(1.05);
+}
 @media (max-width: 767px) {
   .contact .container .box {
     width: 80%;
   }
 }
-
-.contact .container .box:hover {
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-}
-
-.contact .container .box i {
-  color: var(--main-color);
-}
-
 .contact .container .box h3 {
   margin: 30px 0;
   text-transform: capitalize;
@@ -364,27 +362,13 @@ header ul a:hover {
 /* end contact section */
 /* start footer */
 footer {
-  background-color: #1f010b;
+  background-color: var(--sec-color);
   padding: 30px;
 }
 
 footer .container {
   display: flex;
   justify-content: space-between;
-}
-
-@media (max-width: 767px) {
-  footer .container {
-    flex-direction: column;
-  }
-
-  footer .container p {
-    margin: 20px auto;
-  }
-
-  footer .container .socials {
-    margin: 20px auto;
-  }
 }
 
 footer .container p {
@@ -398,14 +382,24 @@ footer .container p a {
   color: var(--main-color);
   text-decoration: none;
 }
-
 footer .container .socials a {
   margin: 0 10px;
   color: white;
 }
-
 footer .container .socials a:hover {
-  color: #ccc;
+  color: var(--forth-color);
 }
+@media (max-width: 767px) {
+  footer .container {
+    flex-direction: column;
+  }
 
+  footer .container p {
+    margin: 20px auto;
+  }
+
+  footer .container .socials {
+    margin: 20px auto;
+  }
+}
 /* end footer */
