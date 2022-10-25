@@ -12,9 +12,6 @@ window.onload = function () {
 let dark = document.querySelector(".dark");
 let light = document.querySelector(".light");
 
-if (window.localStorage.getItem("mode")) {
-}
-
 dark.onclick = function darkMode() {
   dark.classList.toggle("active");
   light.classList.toggle("active");

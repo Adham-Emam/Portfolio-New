@@ -38,7 +38,7 @@ a {
 /*  X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .container {
-    width: 1260px;
+    width: 1160px;
   }
 }
 
@@ -89,6 +89,17 @@ header .dark-mode i.active {
 header a {
   text-transform: uppercase;
 }
+@media (max-width: 767.98px) {
+  header {
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  header a {
+    text-align: center;
+    flex-basis: 100%;
+  }
+}
 /* End Header  */
 /* Start Landing */
 #landing {
@@ -137,5 +148,26 @@ header a {
 #landing ul.loaded {
   transform: rotate(90deg) translate(-100px, 0);
   opacity: 1;
+}
+#landing ul li i {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  #landing {
+    padding: 0 20px;
+  }
+  #landing ul {
+    transform: rotate(90deg);
+  }
+  #landing ul li {
+    transform: rotate(-90deg);
+  }
+  #landing ul li i {
+    display: block;
+    font-size: 25px;
+  }
+  #landing ul li span {
+    display: none;
+  }
 }
 /* End Landing */
