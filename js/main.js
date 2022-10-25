@@ -12,36 +12,41 @@ window.onload = function () {
 let dark = document.querySelector(".dark");
 let light = document.querySelector(".light");
 
-dark.onclick = function () {
-  dark.classList.toggle("active");
-  light.classList.toggle("active");
-  document.body.style.cssText =
-    "background-image: linear-gradient(-45deg, white, #666);color: black;";
-};
-light.onclick = function () {
-  dark.classList.toggle("active");
-  light.classList.toggle("active");
-  document.body.style.cssText =
-    "background-image: linear-gradient(-45deg, black, #222);color: white;";
-  document.links.style.color = "black";
-};
-
-// h1 color Changer
-let h1 = document.querySelector("h1");
-let colors1 = [
-  "#14C38E",
-  "#E3FCBF",
-  "#905E96",
-  "#00d7ff",
-  "#FF99D7",
-  "#FFD372",
-];
-
-setInterval(change, 1500);
-function change() {
-  let index = Math.floor(Math.random() * colors1.length);
-  h1.style.color = colors1[index];
+if (window.localStorage.getItem("mode")) {
 }
+
+dark.onclick = function darkMode() {
+  dark.classList.toggle("active");
+  light.classList.toggle("active");
+  document
+    .querySelector("header img")
+    .setAttribute("src", "images/Adham-black.png");
+  document.documentElement.style.setProperty("--active-background", "white");
+  document.documentElement.style.setProperty("--active-text-color", "#222");
+  document.documentElement.style.setProperty(
+    "--active-gradient",
+    "linear-gradient(-45deg, #666, white)"
+  );
+  document.documentElement.style.setProperty(
+    "--active-text-gradient",
+    "linear-gradient(-45deg, #3F0071,#FB2576 )"
+  );
+};
+light.onclick = function lightMode() {
+  dark.classList.toggle("active");
+  light.classList.toggle("active");
+  document.querySelector("header img").setAttribute("src", "images/Adham.png");
+  document.documentElement.style.setProperty("--active-background", "black");
+  document.documentElement.style.setProperty("--active-text-color", "white");
+  document.documentElement.style.setProperty(
+    "--active-gradient",
+    "linear-gradient(-45deg, black, #222)"
+  );
+  document.documentElement.style.setProperty(
+    "--active-text-gradient",
+    "linear-gradient(to right, #bce29e, #ff8787)"
+  );
+};
 
 //Icons
 const html = document.querySelector(".html");
